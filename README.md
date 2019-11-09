@@ -55,9 +55,9 @@ The following diagram depicts the architecture for the Prior Art Archive and all
 	- **Sitemap generator:** An interface that produces a sitemap of all assets. Used by Google to generate CPC codes.
 	- **Search input:** An endpoint that takes a users string input.
 	- **Search results:** An interface that presents a list of search results.
-- **priorart-search-parser:** A lambda trigger that takes the string input from a user and parses it into an ElasticSearch query object.  _Currently sending queries to a kafka queue that hits a Cisco ElasticSearch instance*_
-- **ElasticSearch:** An elastic.co hosted ElasticSearch cluster. _Maintenance: $1000/mo_
-- **priorart-file-parser:** A server deployment on Elastic Beanstalk that implements Tika parsing, formats metadata as Underlay assertions, and writes content to the Postgres DB, Elasticsearch, and the Underlay. [Code available here](https://github.com/knowledgefutures/priorart-file-parser).  _Currently just writing to PG+ES_
+- **priorart-search-parser:** A lambda trigger that takes the string input from a user and parses it into an ElasticSearch query object.  _and sends it on?  Where is the code for this?  Which ElasticSearch instance does it send to?*_
+- **ElasticSearch:** An elastic.co hosted ElasticSearch cluster. _Name and link to it; even if not publicly visible? Maintenance: $1000/mo_
+- **priorart-file-parser:** A server deployment on Elastic Beanstalk that implements Tika parsing, formats metadata as Underlay assertions, and writes content to the Postgres DB, Elasticsearch, and the Underlay. [Code available here](https://github.com/knowledgefutures/priorart-file-parser).  _Currently just writing to PG+ES.  Which ElasticSearch instance does it send to?_
 	- **tika:** Tika server that extracts metadata from a file.
 	- **underlay formatter:** Parses metadata into JSON-LD compliant Underlay assertions.
 - **Underlay cluster:** The Underlay cluster that serves as ground truth for all data in the Prior Art Archive. [Details about the Underlay cluster can be found here](https://kfg.mit.edu/pub/l18rh143).
